@@ -72,6 +72,7 @@
 		9B422E9A24056EEB001B63AF /* 3.3.shader.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 3.3.shader.vs; sourceTree = "<group>"; };
 		9B422E9B24056F11001B63AF /* 3.3.shader.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 3.3.shader.fs; sourceTree = "<group>"; };
 		9B422E9E2405714A001B63AF /* Triangle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Triangle.entitlements; sourceTree = "<group>"; };
+		9B8098BB240A789C00CBC1EB /* 02_triangle.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = 02_triangle.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +166,7 @@
 			children = (
 				9B422E9E2405714A001B63AF /* Triangle.entitlements */,
 				9B422E8D2405659A001B63AF /* main.cpp */,
+				9B8098BB240A789C00CBC1EB /* 02_triangle.md */,
 			);
 			path = Triangle;
 			sourceTree = "<group>";

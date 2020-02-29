@@ -35,7 +35,7 @@ Graphics Pipeline：的工作可以分为两部分
 ### Graphics Pipeline 步骤
 Graphics Pipeline 
 
-![1e286dd517c717e3f1c48792275f7e87.png](evernotecid://F96C1292-17FA-4984-B63A-2AA1FB0686DD/appyinxiangcom/4889110/ENResource/p118)
+![Graphics Pipeline 步骤](https://learnopengl-cn.github.io/img/01/04/pipeline.png)
 
 ```mermaid
 graph LR
