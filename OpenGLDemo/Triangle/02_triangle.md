@@ -9,10 +9,10 @@ Graphics Pipeline：的工作可以分为两部分
 >2D坐标和像素也是不同的，2D坐标精确表示一个点在2D空间中的位置，而2D像素是这个点的近似值，2D像素受到你的屏幕/窗口分辨率的限制。
 ### Graphics Pipeline 步骤
 Graphics Pipeline 可以划分为下面的几个阶段，每个阶段接受上一个阶段的输出作为输入（这些阶段都是高度专门化的，很容易并行。）
+#### Shader(着色器)
+着色器(Shader)： GPU的小处理核心为每一个（Graphics Pipeline）阶段运行自己的小程序。有些着色器运训开发者自己配置（使用自己的着色器来替换默认的实现），以达到更加细致的控制。OpenGL着色器是用OpenGL着色器语言(OpenGL Shading Language, GLSL)编写的。
 
-着色器： GPU的小处理核心为每一个（Graphics Pipeline）阶段运行自己的小程序。有些着色器运训开发者自己配置（使用自己的着色器来替换默认的实现），以达到更加细致的控制。OpenGL着色器是用OpenGL着色器语言(OpenGL Shading Language, GLSL)编写的。
-
-![1e286dd517c717e3f1c48792275f7e87.png](evernotecid://F96C1292-17FA-4984-B63A-2AA1FB0686DD/appyinxiangcom/4889110/ENResource/p118)
+![Graphics Pipeline Shader](https://github.com/xudongzhang99/LearnOpenGL/blob/master/Images/2_pipeline_shader.png?raw=true)
 
 ```mermaid
 graph LR
