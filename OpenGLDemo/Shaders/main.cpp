@@ -8,9 +8,7 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-
-#include "Shaders.hpp"
-
+#include "Shaders.h"
 #include <iostream>
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
@@ -54,8 +52,8 @@ int main()
 
     // build and compile our shader program
     // ------------------------------------
-    Shader ourShader("/Users/zhangxudong/Workspace/Zhihu/Doc/OpenGL/OpenGLDemo/Shaders/3.3.shader.vs",
-                     "/Users/zhangxudong/Workspace/Zhihu/Doc/OpenGL/OpenGLDemo/Shaders/3.3.shader.fs"); // you can name your shader files however you like
+    Shader ourShader("/Users/zhangxudong/Workspace/Github/LearnOpenGL/OpenGLDemo/Shaders/3.3.shader.vs",
+                     "/Users/zhangxudong/Workspace/Github/LearnOpenGL/OpenGLDemo/Shaders/3.3.shader.fs"); // you can name your shader files however you like
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
