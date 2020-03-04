@@ -143,7 +143,7 @@ float vertices[] = {
 };
 ```
 
-![三维坐标系](https://github.com/xudongzhang99/LearnOpenGL/blob/master/OpenGLDemo/Triangle/Images/2_coordinate_system.png?raw=true)
+![3DCoordinate](https://github.com/xudongzhang99/LearnOpenGL/blob/master/OpenGLDemo/Triangle/Images/2_coordinate_system.png?raw=true)
 
 
 ### 顶点数据

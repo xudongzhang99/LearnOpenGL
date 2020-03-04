@@ -16,7 +16,7 @@ void processInput(GLFWwindow *window);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
-
+float mixValue = 0.2f;
 int main()
 {
     // glfw: initialize and configure
@@ -119,7 +119,6 @@ int main()
     {
         std::cout << "Failed to load texture" << std::endl;
     }
-    stbi_image_free(data);
     // texture 2
     // ---------
     glGenTextures(1, &texture2);
@@ -143,14 +142,20 @@ int main()
         std::cout << "Failed to load texture" << std::endl;
     }
     stbi_image_free(data);
+   
     
     // tell opengl for each sampler to which texture unit it belongs to (only has to be done once)
     // -------------------------------------------------------------------------------------------
     ourShader.use(); // don't forget to activate/use the shader before setting uniforms!
     // either set it manually like so:
     glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0);
+ 
     // or set it via the texture class
+   
+    ourShader.setInt("texture2", 0);
     ourShader.setInt("texture2", 1);
+    
+    ourShader.setFloat("mixValue", mixValue);
     
     
     
@@ -172,6 +177,7 @@ int main()
         glBindTexture(GL_TEXTURE_2D, texture1);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
+        ourShader.setFloat("mixValue", mixValue);
         
         // render container
         ourShader.use();
@@ -198,8 +204,28 @@ int main()
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
+bool isGrow = true;
 void processInput(GLFWwindow *window)
 {
+    if (isGrow) {
+        mixValue += 0.001f;
+        if(mixValue >= 1.0f) {
+            mixValue = 0.999;
+            isGrow = false;
+        }
+        
+    } else {
+        mixValue -= 0.001f;
+        if(mixValue <= 0.0f) {
+            mixValue = 0.001f;
+            isGrow = true;
+        }
+    }
+  
+     // change this value accordingly (might be too slow or too fast based on system hardware)
+      if(mixValue >= 1.0f)
+          mixValue = 0.0f;
+        
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 }
